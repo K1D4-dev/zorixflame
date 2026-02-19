@@ -12,6 +12,8 @@ type Product = {
     image_url: string;
 };
 
+
+
 const PopularSection = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
@@ -32,10 +34,12 @@ const PopularSection = () => {
             setLoading(false);
         };
 
+
         loadProducts();
     }, []);
 
     return (
+
         <section className={styles.popular}>
             <SectionTitle title="Популярні товари" />
 
@@ -43,19 +47,21 @@ const PopularSection = () => {
                 {loading && <p>Завантаження...</p>}
 
                 {!loading &&
-                    products.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            title={product.name}
-                            price={product.price}
-                            image={
-                                new URL(
-                                    `/src/assets/images/${product.image_url}`,
-                                    import.meta.url
-                                ).href
-                            }
-                        />
-                    ))}
+                    products.map((product) => {
+                        const { data } = supabase
+                            .storage
+                            .from("zorixflame_storage")
+                            .getPublicUrl(product.image_url);
+
+                        return (
+                            <ProductCard
+                                key={product.id}
+                                title={product.name}
+                                price={product.price}
+                                image={data.publicUrl}
+                            />
+                        );
+                    })}
             </div>
         </section>
     );
