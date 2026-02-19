@@ -1,0 +1,96 @@
+:root {
+
+    /* 🎨 Кольори */
+    --color-accent: #3D7F3C;
+    --color-accent-hover: #2f6330;
+
+    --color-bg-main: #E8F0E4;
+    --color-bg-white: #FFFFFF;
+    --color-bg-gray: #F5F5F5;
+    --color-bg-dark: #1a1a1a;
+
+    --color-text-black: #1a1a1a;
+    --color-text-primary: #222222;
+    --color-text-secondary: #666666;
+    --color-text-white: #FFFFFF;
+
+    /* 🌫 Тіні */
+    --shadow-xs: 0 2px 6px rgba(0,0,0,0.05);
+    --shadow-xl: 0 6px 20px rgba(0,0,0,0.08);
+
+    /* ⚡ Анімації */
+    --transition-time-fast: 0.2s;
+    --transition-time-base: 0.3s;
+    --transition-fast: transform 0.2s ease;
+    --transition-base: transform 0.3s ease;
+
+    --transform-scale: scale(1.1);
+    --transform-scale-low : scale(1.02);
+
+    /* 🔠 Типографіка */
+    --font-family-base: 'Inter', sans-serif;
+
+    --font-size-xs: 10px;
+    --font-size-base: 16px;;
+    --font-size-xl: 28px;
+    --font-size-xxl: 48px;
+
+    /* 📏 Контейнери */
+    --container-padding-x: 100px;
+
+    /* 📦 Відступи */
+    --spacing-xs: 12px;
+    --spacing-base: 28px;
+    --spacing-xl: 40px;
+    --spacing-xxl: 80px;
+
+    /* 🔲 Радіуси */
+    --radius-xs: 10px;
+    --radius-base: 20px;
+    --radius-xl: 30px;
+    --radius-xxl: 50px;
+
+    /* 🔲 Розміри */
+    --width-xs: 26px;
+    --width-base: 40px;
+    --width-xl: 64px;
+    --width-xxl: 96px;
+
+    --product-card-max-width: 230px;
+    --product-card-min-width: 210px;
+    --section-height: 600px;
+
+
+
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-bg-white);
+    color: var(--color-text-black);
+    font-family: var(--font-family-base);
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --container-padding-x: 50px;
+        --product-card-max-width: 220px;
+        --product-card-min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-padding-x: 20px;
+        --product-card-max-width: 210px;
+        --product-card-min-width: 190px;
+
+    }
+}
+

@@ -1,0 +1,16 @@
+.popular {
+    padding:  0 var(--container-padding-x);
+    background: var(--color-bg-white);
+}
+
+.grid {
+    display: flex;
+
+    justify-content: space-evenly;
+    gap: var(--spacing-base);
+    flex-wrap: wrap;
+
+    max-height: calc((var(--product-card-max-width) * 2) + 232px);
+    overflow: hidden;
+}
+

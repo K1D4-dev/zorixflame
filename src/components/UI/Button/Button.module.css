@@ -1,0 +1,23 @@
+.btn {
+    padding: var(--spacing-xs) var(--spacing-base);
+    border-radius: var(--radius-base);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-time-base);
+    background: var(--color-accent);
+    color: var(--color-text-white);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn.section {
+    border-radius: var(--radius-xxl);
+    padding: var(--spacing-base) var(--spacing-xl);
+    font-size: var(--font-size-base);
+}
+
+
+
