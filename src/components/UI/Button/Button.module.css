@@ -15,7 +15,7 @@
 
 .btn.section {
     border-radius: var(--radius-xxl);
-    padding: var(--spacing-base) var(--spacing-xl);
+    padding: var(--spacing-base) var(--spacing-xxl);
     font-size: var(--font-size-base);
 }
 

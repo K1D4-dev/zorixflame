@@ -39,31 +39,32 @@ const PopularSection = () => {
     }, []);
 
     return (
+        <>
+            <section className={styles.popular}>
+                <SectionTitle title="Популярні товари" />
 
-        <section className={styles.popular}>
-            <SectionTitle title="Популярні товари" />
+                <div className={styles.grid}>
+                    {loading && <p>Завантаження...</p>}
 
-            <div className={styles.grid}>
-                {loading && <p>Завантаження...</p>}
+                    {!loading &&
+                        products.map((product) => {
+                            const { data } = supabase
+                                .storage
+                                .from("zorixflame_storage")
+                                .getPublicUrl(product.image_url);
 
-                {!loading &&
-                    products.map((product) => {
-                        const { data } = supabase
-                            .storage
-                            .from("zorixflame_storage")
-                            .getPublicUrl(product.image_url);
-
-                        return (
-                            <ProductCard
-                                key={product.id}
-                                title={product.name}
-                                price={product.price}
-                                image={data.publicUrl}
-                            />
-                        );
-                    })}
-            </div>
-        </section>
+                            return (
+                                <ProductCard
+                                    key={product.id}
+                                    title={product.name}
+                                    price={product.price}
+                                    image={data.publicUrl}
+                                />
+                            );
+                        })}
+                </div>
+            </section>
+        </>
     );
 };
 

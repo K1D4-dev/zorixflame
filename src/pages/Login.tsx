@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { supabase } from "@/library/supabase";
 import { useNavigate } from "react-router-dom";
+import LoginForm from "@/components/Login/LoginForm/LoginForm";
 
 export default function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const handleLogin = async () => {
+    const handleLogin = async (email: string, password: string) => {
         const { error } = await supabase.auth.signInWithPassword({
             email,
             password,
@@ -20,19 +18,5 @@ export default function Login() {
         }
     };
 
-    return (
-        <div>
-            <h2>Admin Login</h2>
-            <input
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={handleLogin}>Login</button>
-        </div>
-    );
+    return <LoginForm onLogin={handleLogin} />;
 }

@@ -4,13 +4,13 @@ import styles from "./Button.module.css";
 type ButtonProps = {
     children: ReactNode;
     onClick?: () => void;
-    variant?: "Card" | "section";
+    variant?: "card" | "section";
 };
 
 export default function Button({
                                    children,
                                    onClick,
-                                   variant = "Card",
+                                   variant = "card",
                                }: ButtonProps) {
     return (
         <button
