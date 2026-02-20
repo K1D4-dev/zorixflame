@@ -14,7 +14,7 @@ export default function ProductCard({ image, title, price }
     return (
         <div className={styles.card}>
             <div className={styles.image}>
-                <img src={image} alt={title} />
+                <img src={image} alt={title} loading="lazy"/>
             </div>
 
             <div className={styles.info}>

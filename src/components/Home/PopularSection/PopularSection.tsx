@@ -51,7 +51,7 @@ const PopularSection = () => {
                             const { data } = supabase
                                 .storage
                                 .from("zorixflame_storage")
-                                .getPublicUrl(product.image_url);
+                                .getPublicUrl("prev-"+product.image_url);
 
                             return (
                                 <ProductCard
